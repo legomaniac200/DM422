@@ -2,8 +2,8 @@ library(tidyverse)
 library(janitor)
 
 input1 <- read.csv("C:/Users/pdkro/OneDrive/Desktop/Fall 2022/Data Mining/Traffic_Violations.csv")
-#input1$Color[input1$Color == "BLUE, DARK" | input1$Color == "BLUE, LIGHT"] <- "BLUE"
-#input1$Color[input1$Color == "GREEN, DK" | input1$Color == "GREEN, LGT"] <- "GREEN"
+input1$Color[input1$Color == "BLUE, DARK" | input1$Color == "BLUE, LIGHT"] <- "BLUE"
+input1$Color[input1$Color == "GREEN, DK" | input1$Color == "GREEN, LGT"] <- "GREEN"
 
 realdata <- subset(input1, Color == "BLACK" | Color == "WHITE" | Color == "GRAY" | Color == "SILVER" | Color == "RED" | Color == "BLUE" | Color == "BROWN" | Color == "GREEN" | Color == "BEIGE" | Color == "ORANGE" | Color == "GOLD" | Color == "YELLOW" | Color == "PURPLE")
 #ggplot(data = realdata, mapping = aes(x = Color)) + geom_bar()
